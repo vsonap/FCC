@@ -1,0 +1,605 @@
+The first thing you need to do is start the terminal. Open a new one by clicking the "hamburger" menu at the top left of the window, going to the "terminal" section, and clicking "new terminal". Once you open a new one, type echo hello git into the terminal and press enter.
+
+1. Follow the directions closely
+
+2. If the tests don't pass, trash all the terminals with the trash can icon at the top right of the terminal. Then, redo those instructions
+
+You should be in the project folder in the terminal you opened. Use the terminal to make a new directory named sql_reference in the project folder. As a reminder, you can use the mkdir command to make a new folder.
+
+1. Enter mkdir sql_reference in the terminal from the project folder
+
+2. Enter cd ~/project to get to the project folder if you aren't there
+
+3. Don't try to create the folder with another method
+
+Use the "change directory" command in the terminal to change to your new folder.
+
+1. Enter cd sql_reference into the terminal
+
+2. Make sure you are in the project folder first
+
+3. Enter cd ~/project to get to the project folder if you aren't there
+
+Git is a version control system to keep track of your code. This folder will be your git repository. Turn it into one by typing git init in the terminal from this folder.
+
+1. Enter git init into the terminal while in the sql_reference folder
+
+2. Make sure you are in the sql_reference folder first
+
+3. Enter cd ~/project/sql_reference to get to the folder if you aren't there
+
+Use the list command with the -a flag to list the hidden folders and files.
+
+1. The list command is ls
+
+2. Type ls -a into the terminal and press enter
+
+3. Make sure you are in the sql_reference folder first
+
+4. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+The git init command created that .git folder for you. It's what keeps track of all the things in your repository. Use git status to see the status of where you are. This command will be your best friend.
+
+1. Type git status into the terminal and press enter
+
+2. Make sure you are in the sql_reference folder first
+
+3. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+A git repository has branches to help keep track of things you are doing with your code. It's common to have a main branch which might be for your production code, and other branches for adding new features or fixing bugs. You can create and go to a new branch with git checkout -b new_branch. The -b stands for "branch". Use that command to switch to a new branch named main.
+
+1. Capitalization matters
+
+2. Type git checkout -b main into the terminal
+
+3. Make sure you are in your sql-reference repo folder
+
+4. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+Check your status again with git status.
+
+1. Type git status into the terminal and press enter
+
+2. Make sure you are in your sql_reference repo folder
+
+3. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+Now you are on the main branch. Use the touch command to create README.md inside your repository. This is a file you will see in many repos to describe what the repo is for.
+
+1. Use touch file_name to create a file
+
+2. Type touch README.md into the terminal and press enter
+
+3. Don't try to create the file with another method
+
+4. Make sure you are in your sql_reference repo folder
+
+5. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+Add the text SQL Reference at the top of your new file to let people know what your repo is for.
+
+1. Add the suggested text in your README.md file
+
+Check the status of your repo again.
+
+1. Use the "git status" command in your repo
+
+2. Type git status into the terminal and press enter
+
+3. Make sure you are in your sql_reference repo folder
+
+4. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+The file you created has not been added to git yet so it is showing that it is untracked. There's two steps to make git keep track of it for you. First you need to add it to the staging area like this: git add file_name. Add your README.md file to the staging area.
+
+1. Replace file_name in the example with your README.md file
+
+2. Type git add README.md into the terminal and press enter
+
+3. Make sure you are in your sql_reference repo folder
+
+4. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+Check your status again.
+
+1. Use the "git status" command in your repo
+
+2. Type git status into the terminal and press enter
+
+3. Make sure you are in your sql_reference repo folder
+
+Now your file is in staging and will be added with the next commit. You aren't quite ready to commit this yet though. Use touch again to create sql_reference.json in your repo.
+
+1. Use touch file_name to create a file
+
+2. Type touch sql_reference.json into the terminal and press enter
+
+3. Don't try to create the file with another method
+
+4. Make sure you are in your sql_reference repo folder
+
+5. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+Check your status again.
+
+1. Use the "git status" command in your repo
+
+2. Type git status into the terminal and press enter
+
+You now have one file in staging and one that is untracked. Add the new file you created to the staging area.
+
+1. Here's the example again: git add file_name
+
+2. You added the last one with git add README.md
+
+3. Type git add sql_reference.json into the terminal and press enter
+
+4. Make sure you are in your sql_reference repo folder
+
+5. Enter cd ~/project/sql_reference to go to the folder if you aren't there
+
+Check your status one more time please 😁
+
+Now you have two files in staging. To commit them, you can use git commit -m "Initial commit". The -m stands for "message". Often times, the first commit of a repo will have the message "Initial commit". Commit your two files with the message Initial commit.
+
+1. Type git commit -m "Initial commit" in the terminal and press enter
+
+2. Enter git log to see if your message is correct
+
+3. If the message is wrong, enter git reset HEAD~1, then git add ., and then you can try to make the commit again
+
+4. Or, reset the lesson and try again
+
+When you make a commit, whatever is in the staging area will be added to your git history. You can see some info in the terminal output about the commit. Check your status again to see what's there.
+
+Your "working tree" is clean, the files were committed and there's no other new changes that git recognizes. You can see your commit history with git log. Check your commit history.
+
+You can see the commit you made. It shows the message you gave with the commit, along with your username, email, the date, and a commit hash. The hash is that long string of characters. Open up your .json file and create an object with a reference for how to create a database that looks like this:
+
+{
+  "database": {
+    "create": "CREATE DATABASE database_name;"
+  }
+}
+
+Make sure there's one empty line at the bottom of the file and no extra spaces after the value or any of the curly brackets.
+
+Check your status again.
+
+Git recognizes new unstaged changes to your file. Notice that it says that file is modified instead of untracked because the file has been previously committed. You can see the changes you made with git diff. Take a look at the new changes.
+
+The lines with + in front means that those lines were added. Add your new changes to staging with the git add command again. Make sure to put the filename you want to add at the end of the command.
+
+Check your status.
+
+Your new changes are staged and ready to be committed. Commit them with the message feat: add create database reference. As a reminder, here what the command to commit looks like: git commit -m "message".
+
+Commit messages often start with fix: or feat:, among others, to help people understand what your commit was for. Check your git log again to see the new commit added.
+
+Now there's two commits in your history, the newest one is at the top 😄 In your JSON file, add a drop key to your database object. Give it a value for how to drop a database similar to the create value. The syntax is in the hints. Again, make sure there's an empty line at the bottom of the file and no extra spaces after any values or curly brackets.
+
+Check your status.
+
+Changes not staged. Check the diff quick.
+
+It should show one line removed and two lines added. Add your changes to the staging area.
+
+Commit your staged changes with the message, feat: add drop database reference
+
+I think you're catching on 😄 Check the log again.
+
+Now there's three commits 😄 You have been making changes to your main branch. You actually want to try and avoid that. Type git branch to see the current branches in your repo.
+
+You only have the main branch still. You can create a branch with git branch branch_name. Branches often start with fix/ or feat/, among others, like commit messages, but they use a forward slash and can't contain spaces. Create a new branch named feat/add-create-table-reference.
+
+Your new branch is a clone of the main branch since that's the branch you were on when you created it. It will have the same code and commit history as main did at the time of the branch creation. View your branches again with git branch.
+
+You can see your new branch, but you are still on the main branch, as denoted with the *. To switch to a branch use: git checkout branch_name. Switch to your new branch.
+
+It says you switched to your new branch. Type git branch so I can make sure the * switched.
+
+Like I said, you often don't want to make commits directly to the main branch of a repo. This branch will be for some new changes. What you will do is make the changes and commits here, then merge them into the main branch when they are ready. Add a reference for creating an SQL table to your json file along side your database property. Make it look like this:
+
+"table": {
+  "create": "CREATE TABLE table_name;"
+}
+
+Show me the status again. You might as well get used to it 😺
+
+Changes not staged. Check the diff quick so you can make sure your changes look good.
+
+You made new changes so the file shows up as not staged. Add the file to staging so you can commit the changes.
+
+The changes are now in staging. Commit your staged changes with the message feat: add create table reference.
+
+Check your git log again.
+
+Now you have four commits, they are getting a little hard to see. Check the log again, but this time use the --oneline flag to condense the output so it's more readable.
+
+That's better. Use git checkout to switch back to the main branch.
+
+You may have noticed that the code you added disappeared from the JSON file. Your changes were added on the feat/add-create-table-reference branch so they don't exist on this branch. Check the log of the main branch, use the --oneline flag again.
+
+You can see three commits on this branch and four on the feature branch you were just on. The commit and code you added on the feature branch only exist over there for now. View the branches you have to remind me the name of your other branch.
+
+You created the feat/add-create-table-reference branch, made a commit, and now it's ready to be added to the main branch. You can use git merge branch_name to bring changes from a branch into the branch you are currently on. Merge the changes from your feature branch into the main branch.
+
+The commits and code from your feature branch were added to this branch. There's a message with some info about the merge. Check the log with the --oneline flag again.
+
+The feat: add create table reference commit you made on your feature branch was added to this branch with the merge. You can delete a branch with git branch -d branch_name. -d stands for "delete". Since your changes were added, you can safely delete your feature branch. Do that now.
+
+It said it was deleted, but view your branches again for me to verify that it's gone.
+
+You're just left with the main branch... Want to try it again? Last time you created a branch and then switched to it. You can do both at the same time with git checkout -b branch_name. Create and switch to a new branch named feat/add-drop-table-reference.
+
+Add a drop key to the table object of your JSON file. Give it a value for how to drop a table. The syntax is in the hints.
+
+Check your status.
+
+Check the diff so you can confirm you like your changes.
+
+Add your changes to staging.
+
+Commit your staged changes with the message feat: add drop table reference.
+
+Switch back your main branch so you can merge in these changes.
+
+Remember that the code and commit you added aren't on this branch, so they disappeared again. View the branches on your repo so you can get the name of it to merge your feature into the main branch.
+
+Merge your feature branch into the main branch.
+
+The commit from your feature branch was added to the main branch so you can safely delete the feature branch. Delete your feature branch.
+
+You're getting the hang of it 😄 The process is to create a branch, make the changes you want, commit them, and then merge the changes into branch you started on. Pretty simple, lets keep going. Create and checkout a new branch named feat/add-column-references
+
+This branch will be a work in progress. Add a column key to your JSON object. Make it an object like the other two. Give it a single property, add, that has the value "ALTER TABLE table_name ADD COLUMN column_name;".
+
+View the diff to make sure your new changes are what you expect.
+
+Add your changes to staging. Here's a tip: you can use git add . to add all files to staging.
+
+Commit your staged changes with the message feat: add column reference.
+
+View your log with the oneline flag.
+
+The commit was added. I see an error in the syntax of one of the commands. You want to fix it, but this branch is not for fixing it. Switch back to your main branch so you can create a new branch to fix it.
+
+Remember that, when you create a branch, it will be a clone of whatever branch you are on when you create it. That's why you switched to main first. Create and switch to a branch named fix/create-table-syntax.
+
+The create table command is a function, so it needs parenthesis () at the end. Add those to the end of the command.
+
+Check your status and diff to see your new changes. Then, add your files to staging.
+
+Commit your changes with the message fix: create table syntax.
+
+Switch back to your main so you can merge this important bug fix.
+
+View your branches to remind me of the branch name.
+
+Merge your bug fix branch into this branch.
+
+View your log with the oneline flag.
+
+The bug fix is in and you can safely delete the branch. Go ahead and delete the branch that was for that fix. View your branches if you need to find the name.
+
+Your bug fix is merged into the main branch. Switch back to your feature branch so you can continue adding column references.
+
+View your log with the oneline flag.
+
+You created this branch and made a commit. Since then, a commit for a bug fix was added to main. This is common with many people working on a codebase simultaneously. You need to update this branch so it has the same commits from main, but you can't just merge that branch into this one. You need that bug fix commit to be in the same order here as it is on main, right after the "drop table" commit. You need to rebase this branch against main to do that. Enter git rebase main to rebase this branch.
+
+There was some fancy output there, but you can see the parenthesis from the bug fix commit were added to the table.create value. Show me the log again with the same flag you have been using so you can see what happened.
+
+The logs show that the bug fix commit from main was added, and then the commit from this branch was added on top of it. Now, when this branch is ready to be merged into main, it will have the same commit history. You should try to keep your branches up to date like this by rebasing them often. In your JSON file, add a drop key to the column object with a reference for dropping a column. The syntax is in the hints, give it a try first.
+
+Check your status and diff to see your new changes. Then, add your changes to staging.
+
+Commit your changes with the message: feat: add drop column reference.
+
+View your log again. Make sure you use my favorite flag.
+
+Switch to your main branch, there's another feature that needs to be worked on.
+
+Create and switch to a new branch named feat/add-insert-row-reference.
+
+Pretend that this branch is for someone else working on a new feature at the same time you are working on the column commands. Add a row key to your JSON object. Make it an object with an insert key whose value is "INSERT INTO table_name(columns) VALUES(values);"
+
+Check your status and diff so you can see your new changes. Then, add your changes to staging.
+
+Commit your changes with the message: feat: add insert row reference.
+
+This branch is finished. Switch to your main branch so you can merge this commit in.
+
+View your branches to find the name of the branch you want to merge.
+
+Merge your branch with the insert row reference you were just working on into the main branch.
+
+Check your logs to make sure the commit was added. Then, switch to your branch for adding column references.
+
+Another commit was added to main, you should update this branch again. To be more specific, a rebase will "rewind" this branch to where it last matched main, then, add the commits from main that aren't here. After that, it adds the commits you made to this branch on top. rebase this branch against main so it's up to date. You should see a conflict...
+
+The confict arose because the first commit you added to this branch changed the same lines as the commit from main. So it tried to add the commit, but couldn't because something was already there. There are sections, separated by characters (<, >, and =), that represent the commit you are on (HEAD) and the commit that is trying to be added (feat: add column reference). Fix the conflict by removing those <, >, and = characters. Then making the JSON object valid again.
+
+Check your status.
+
+It says that you are still in the middle of rebasing and there's one file that needs to be merged yet. Add the file to staging like you would any other commit.
+
+Check your status again.
+
+You fixed the conflicts that arose from trying to add this commit and added them to staging. It says all conflicts fixed: run "git rebase --continue". Run the suggested command to continue the rebase.
+
+The last commit was added after you continued the rebase without conflict. The rebase is now finished. View your log with the oneline flag.
+
+You can see the "insert row" commit from main was added to this branch before the two commits you made here. Now this branch is up to date and you can continue working on it. Add a rename key to the column object. The value should look like this: "ALTER TABLE table_name RENAME COLUMN column_name TO new_name;"
+
+Check your status and diff to see your new changes. Then, add the file to staging.
+
+Commit your changes with the message feat: add rename column reference
+
+There's now three commits that are unique to this branch, you will come back to it later. Switch to the branch for adding row references.
+
+This branch is still up to date since no commits have been added to main since this branch was created. Add an update key to the row object with "UPDATE table_name SET column_name = new_value WHERE condition;" as it's value.
+
+Check your status.
+
+There's been a mistake. This branch was for the insert command, not the update command. You can put your changes aside with git stash. Stash your changes so you can add them to a different branch.
+
+You might have noticed your uncommitted changes disappeared from the file. Check your status again.
+
+Your working tree is clean and there's no changes git recognizes. The changes you made are stashed. View the things you have stashed with git stash list.
+
+You can see one item there. Bring the changes back with git stash pop.
+
+The changes from the stash reappeared in the file and git showed the status for you. You are right where you left of before stashing the changes. Popping a stash like that will remove the most recent stash and apply it to your working tree. View the list of your stashes again.
+
+The list is empty again. Put the changes back in the stash.
+
+View the list of your stashed changes.
+
+The changes are stashed again. View a condensed version of the changes in the latest stash with git stash show.
+
+You can see what file was changed and how many lines were added and removed from the file. View the full changes of the latest stash with git stash show -p. -p stands for "patch".
+
+Now you can see the actual changes that are stored in the stash. Before, you used the pop command to removed the latest stash and add it to your working tree. You can add the latest stash while keeping it in the list with git stash apply. Apply your stash with this method.
+
+Git showed you your status after applying the stash. The one file is unstaged again. View your stash list.
+
+The code from the stash was added to your working tree, and the stash is still there in case you want to add it somewhere else. Stash the changes again.
+
+View the list of your stashed changes again.
+
+Now there's two things stashed. You can use the name at the front of each stash (stash@{#}) with many of the stash commands to select one other than the latest one. The most recent stash is the one at the top, stash@{0}. View the condensed changes of the oldest stash with the git stash show command by putting the name of the stash after it.
+
+Next, using a similar method, show the full changes of the oldest stash with the "patch" flag you used earlier.
+
+There's two identical items in your stash. Drop one of them with git stash drop or git stash drop <stash_name>.
+
+View the list of stashed changes again to verify the one got deleted.
+
+You should just have the one stash left. Switch to your main branch so you can create a new branch from that and add these changes to it.
+
+Before I make you work on the wrong branch again. Delete the branch for inserting a row.
+
+Create and checkout a new branch named feat/add-more-row-references for adding some more row related commands.
+
+Show me your stash list again to make sure your changes from the other branch are still stashed.
+
+It's still there. Pop the stash so the code gets added to this new branch.
+
+Git showed you your status again, and it looks like it recognizes that the file has new changes after adding the stash. View the stash list to verify that it's empty.
+
+The list is empty. View the diff of your changes so you can make sure they are what you expect.
+
+It looks good. Add the changes to staging.
+
+View your status, then commit the staged changes with the message feat: add update row reference.
+
+Your work on this branch is done for now. Switch to your main branch so you can merge the commit you just made.
+
+Merge your branch for adding row references that you just added a commit to.
+
+Switch to your branch for the column references so you can continue working on that.
+
+Once again, commits have been added to main so you should update this branch. Rebase this branch against main to bring in the new commits. You should get a conflict.
+
+This conflict is a little trickier. Make the JSON object whole again so you can add the changes and finish rebasing. Make sure you put all the references in their correct objects, and in the same order they were originally in. There may be a duplicate line you need to delete.
+
+View the status of your repo.
+
+You are still rebasing. You fixed the conflicts for the commit trying to be added. It looks like it was the "add column" commit that had the conflict. Add your changes to staging.
+
+View the status again.
+
+Continue your rebase with the suggested command.
+
+The rest of the commits were added without conflict. View your log with the oneline flag.
+
+The rebase added the "row" commits where they are supposed to be, then the "column" commits from this branch on top. Excellent. Now you can continue working on it. Add a reference to the column object for setting a column as the primary key. Give it a key of primary_key and a value of "ALTER TABLE table_name ADD PRIMARY KEY(column_name);"
+
+Check the diff to make sure you like your changes. Then, add the changes to staging.
+
+Commit your staged files with feat: add primary key reference as the message.
+
+Add foreign_key to the column object for another command. It's value should be "ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES table_name(column_name);".
+
+Check the diff to make sure you like the changes, then add the changes to staging.
+
+Commit the changes with feat: add foreign key reference as its message.
+
+Go to your branch for the row references so you can continue work on those.
+
+In your JSON file, add a delete key to the row object. Take a guess at the value, it should include the DELETE FROM and WHERE keywords. The whole value is in the hints.
+
+View the diff of your changes, then add them to staging.
+
+Commit the staged changes with the message feat: add delete row reference.
+
+Go to the main branch so you can merge these commits.
+
+Merge the branch for the row commands into main.
+
+You merged the branch and are done with it. Delete the branch for the row references.
+
+I missed a bunch of the rename commands when I had you work on a few of the objects. Create and checkout a branch named fix/add-missing-rename-references.
+
+I forgot to add a command for how to rename a database. In your JSON file, add a rename key to the database object. The value should be "ALTER DATABASE database_name RENAME TO new_name;"
+
+View the diff of your changes to make sure you like them, then add them to staging.
+
+Commit your stages changes with fix: add missing rename database reference for the message.
+
+Leave this branch for now. Switch back to your branch for the column references so you can hopefully finally finish it.
+
+There was a commit to main since you last worked on this from when you merged the "add more row references" branch. Rebase this branch against main so it's up to date and you can finish working on it.
+
+Fix the conflicts so that all the commands are in their correct objects.
+
+You fixed the conflicts. Check your status, then add your files to staging.
+
+Check your status again.
+
+Use the suggested command to continue your rebase.
+
+There was a conflict when it tried to add the first commit from this branch on top of the one that was brought in from main. The rest of the commits were added without conflicts. In your JSON file, add a unique key to the column object. Give it a value of "ALTER TABLE table_name ADD UNIQUE(column_name);"
+
+View the diff to make sure you like the changes, then add the changes to staging.
+
+Commit the stages files with feat: add unique reference for the message.
+
+I'm going to show you a few ways to remove or undo a commit. The first is to simply "travel back in time". You can use the git reset command to travel to any point in your commit history. Your current HEAD is a reference to the last commit you just made. Use git reset HEAD~1 to go back one before HEAD.
+
+This is a "soft" reset and will put the changes from the commit you undid in your working tree. You can see that it says there's unstaged changes after the reset to your file. View your log with the oneline flag.
+
+Your commit for how to set a column to unique is gone. View your status.
+
+View the diff.
+
+And the changes from the reset are back in the working tree. So when you reset to one commit before HEAD, it removed the most recent commit, and put all the changes in the working tree. If you used the --hard flag with the reset, the changes would have not been added to the working tree. Add the changes back to staging so you can commit them again.
+
+Commit the change staged files with feat: add unique reference for its message.
+
+Reverting is a good way to undo a commit because you don't lose the commit from the history. You can revert the most recent commit (HEAD) with git revert HEAD. Do that now.
+
+Git put you into Nano and is asking you enter a commit message for the revert, but they added a default one for you. Don't change anything in Nano, just exit the file to use the default message. You can exit the file by pressing ctrl+x.
+
+View the log with that flag I like again.
+
+Using revert to undo that commit added another commit that is the exact opposite of it. Enter git show into the terminal to see the last commit added (now HEAD) and its details.
+
+Type git show HEAD~1 to take a look at the details of the original commit that you reverted.
+
+If you look at the bottom of those two messages, it shows the diff. The diff of the revert commit is the exact opposite of the one before it. Effectively, undoing the changes. You've used rebase to update this branch, but you can enter an "interactive" mode to manipulate commits. Type git rebase --interactive HEAD~2 into the terminal to enter this mode. The HEAD~2 means you will have a chance to change the last two commits.
+
+At the top of Nano, you can see the two commits with pick next to them. Below them, there's a list of options for working with them. pick means that it will use the commits as they were. At the bottom, it says, d, drop = remove commit. Replace the word pick preceeding your two commits with a d to drop them both. When you are done, save the file and exit Nano.
+
+View your log. Use the --oneline flag.
+
+Both, the commit to add the unique command and the one to revert it, were dropped. Enter another --interactive rebase that goes back to the --root instead of HEAD~2. I am going to show you how to change a commit message. --root means that the rebase will go back to your very first commit.
+
+You can see that the latest commit is at the bottom here. Be careful not to change the wrong commits. One of the options is r, reword = use commit, but edit the commit message. Replace pick with an r next to the commit with the message feat: add column reference to reword the message, it's the very first commit you added to this branch. When you are done, save the file and exit Nano. Git will put you in another Nano instance to reword the commit message. Don't change anything in it yet.
+
+Git is waiting for you to edit the commit message. Add an s at the end of the commit message so it is feat: add column references. When you are done, save the file and exit Nano.
+
+View your log. Use the --oneline flag.
+
+The message was reworded, but there's a problem. Look at the commit hash for your Initial commit from the last two times you viewed the log, it's that string left of the log. They aren't the same anymore since you rebased back to the root. Same goes for the rest of the commits. When you rebase interactively it changes all those hashes, so git sees them as different commits. If you were to try and merge this into main, it wouldn't work because they don't share the same history anymore. For this reason, you don't want to do an interactive rebase where you go back passed commits unique to the branch you are on. Fortunately, you can fix this. Enter git rebase main to realign the history of the two branches.
+
+View your log again. Use the --oneline flag.
+
+Now the hashes are the same as they were before you rebased back to --root, which is what they are on main. Enter another interactive rebase. Go back to the first commit you added to this branch, it's HEAD~5.
+
+Squashing commits means that you will take a bunch of commits and turn them into one. This is helpful to keep your commit history clean and something you want try to do. Replace pick with an s next to all your commits except the one with the message feat: add column references. When you are done, save and exit the file. You will find yourself in another instance of Nano. Don't change anything in it yet.
+
+Nano brought up a list of all the commit messages you used for the commits. Don't change anything in there, just exit the file to use those messages and finish squashing the commits.
+
+View your log with the oneline flag.
+
+Now all the "column" commits you made to this branch have been squashed into just the one commit at the top. View the log again, but use -1 instead of --oneline this time to view only the last commit.
+
+You can see that your one commit has all the messages that were in Nano, which are all of the commits you made to this branch squashed into one commit. I think you are finally done with this branch. Go to your main branch so it can get merged.
+
+Merge your branch for adding column commands into this one.
+
+Hopefully, there were no conflicts. Delete your branch for adding information about column commands since you are done with it.
+
+Go to your branch for adding the commands that were missing. There's one more to add.
+
+There was added a commit to main since you last worked on this. Update this branch with a rebase against main.
+
+You viewed the most recent log with a -1 flag. You can view the last x number of commits with any number instead of 1. View the last five commits with the oneline flag.
+
+This branch is up to date now. In your JSON file, add a rename key to the table object. The value is in the hints, but give it a try first. It follows a similar structure as the rest of them.
+
+Check the diff of your changes, then add them changes to staging.
+
+Commit your staged changes with the message, fix: add missing rename table reference.
+
+View your last five logs with the oneline flag again.
+
+You have two commits on this branch that could be squashed. Enter an interactive rebase that goes back to HEAD~2 so you can squash them.
+
+Replace pick with s next to your commit for adding the rename table reference to squash it. Be careful not to do the wrong one. When you are done, save and exit Nano.
+
+The lines that don't start with a # will be the commit messages. Add a new message at the top of the file on it's own line. Give it the text, fix: add missing rename references. When you are done, save and exit the file.
+
+View only the last commit in your log to see your squashed commit.
+
+I think this branch is ready to go. Switch to main so you can merge it.
+
+Merge your branch for adding the rename commands into main.
+
+View your branches.
+
+Delete all your branches except main.
+
+I think the file is complete, thanks for making this for me. View the log with the oneline flag.
+
+That's a nice looking commit history. There's one more thing you should learn. Create and checkout a branch named feat/add-gitignore.
+
+Use the touch command to create a file named .env in your repo.
+
+.env files are used to store environment variables for running code. Often times, there may be sensitive information in it. Add the text SECRET=MY_SECRET to the file.
+
+View your status.
+
+You can see the .env file is new. Use touch again to create another file named .gitignore in your repo.
+
+View the status again.
+
+Now there's two new files that aren't tracked yet. Add the text .env to your .gitignore file.
+
+View the status again.
+
+Now the .env file is being ignored by git because you added it to the .gitignore file. There are often a number of things you don't want to include in a repository, especially if it's publicly visible. Now, you know how to keep them from being tracked by git. Add your new changes to staging.
+
+Commit your changes with feat: add .gitignore for the message.
+
+Use touch to create another file named sample.env in your repo.
+
+View the status.
+
+Git won't ignore this file. Sensitive information can be stored in the .env file, but people need to know the variables that are in there so they can run a repository locally. Add SECRET= to sample.env.
+
+Now, when someone wants to run your repo, they will know that they need to create a .env file and add a value in it for SECRET. Add your new file to staging.
+
+Commit the new changes with the message feat: add sample.env.
+
+View the last five commits in your log with the oneline flag.
+
+The two commits you made to this branch can be squashed. Do an interactive rebase that goes back to all the commits unique to this branch (HEAD~2).
+
+Squash your commit that was for adding the sample.env file. When you are done, save the file and exit Nano.
+
+Add a new message at the very top of the file, feat: add .gitignore and sample.env. When you are done, save and exit the file.
+
+View only the last commit in your log.
+
+Switch back to main so you can add this in.
+
+Merge the branch you just made into here.
+
+Delete the feature branch you just merged.
+
+I think it's all finished. View your log with the oneline flag to see your whole history.
+
+Looks great 😄 View the log one last time, without any flags, to see the details of all the commits. Congratulations, you are finished with your repo for now.
