@@ -1,5 +1,3 @@
-## Info
-
 ### Projects for the certification of Relational Database course
 >- [Universe](https://github.com/vsonap/FCC/tree/main/Universe)
 >- [World Cup](https://github.com/vsonap/FCC/tree/main/worldcup)
